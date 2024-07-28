@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lex2line</title>
+    <link rel="icon" href="favicon.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #1E1E1E;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            max-height: 160px;
+        }
+
+        .description {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .editor-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        textarea, .preview, .generated-html {
+            width: 80%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-family: monospace;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            overflow: auto;
+            resize: vertical;
+        }
+
+        textarea {
+            min-height: 200px;
+        }
+
+        .preview {
+            background-color: #f9f9f9;
+        }
+
+        .generated-html {
+            background-color: #f0f0f0;
+        }
+
+        blockquote {
+            border-left: 5px solid #555;
+            padding-left: 10px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        .info {
+            margin-top: 20px;
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .clickable-image {
+            width: 20%;
+            display: block;
+            margin: 1px auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.svg" alt="Logo" class="logo">
+    </div>
+    <div class="description">
+        <p>Lex2line is a simple way to create HTML code based on something similar to Markdown in a certain sense with the purpose of making something decent and useful.</p>
+    </div>
+    <div class="editor-container">
+        <textarea id="editor" placeholder="This is where it all begins..."></textarea>
+        <div id="preview" class="preview"></div>
+        <div id="generated-html" class="generated-html"></div>
+    </div>
+    <div class="info">
+        <h2>Implementation</h2>
+        <p>This editor allows you to create and view content in Markdown format, converting it to HTML in real time. As you type in the editor area, the content is converted and displayed in the preview. Below is a detailed guide on how to use each available feature.</p>
+      
+        <h2>1. Colored Headers</h2>
+        <p>Use <code>h1-#FF5733</code> to create a level 1 header with the color #FF5733. Similarly, <code>h2-#33C1FF</code> creates a level 2 header with the color #33C1FF.</p>
+        
+        <p>Use headers to structure your content and highlight important sections. You can specify a color for each header by adding a hexadecimal color code after the header size.</p>
+
+        <h2>2. Images</h2>
+        <p>Use <code>![Image Description](https://via.placeholder.com/150)</code> to insert an image with the provided URL and an alternative description.</p>
+        
+        <p>Use this syntax to add images to your content. Ensure that the URL is accessible and the description is clear to improve accessibility.</p>
+
+        <h2>3. Links</h2>
+        <p>Use <code>[Link Text](Link-URL)</code> to create a link pointing to the provided URL with the text "Link Text".</p>
+        
+        <p>Add links to redirect users to other web pages. The link text should be descriptive of the link’s destination.</p>
+
+        <h2>4. Video</h2>
+        
+        <img src="videos.svg" alt="Video" class="logo">
+        <p>Include videos in your content by providing the video URL. Ensure that the video is accessible and compatible with browsers.</p>
+
+        <h2>5. Bold Text</h2>
+        <p>Use <code>**Bold Text**</code> to make text bold.</p>
+        <p>Use bold text to emphasize important words or phrases in your content.</p>
+
+        <h2>6. Italic Text</h2>
+        <p>Use <code>*Italic Text*</code> to display text in italics.</p>
+        <p>Italic text can be used to emphasize words or phrases, or to represent technical terms and names of works.</p>
+
+        <h2>7. Blockquotes</h2>
+        <p>Use <code>&gt; Blockquote Example</code> to create a blockquote.</p>
+        <p>Use blockquotes to display quotes or important references. This helps differentiate quoted text from the rest of the content.</p>
+
+        <h2>8. Dividers</h2>
+        <p>Use <code>---</code>, <code>***</code>, or <code>___</code> to create a horizontal divider.</p>
+        <p>Dividers are useful for visually separating different sections or blocks of content, enhancing the document's readability.</p>
+
+        <h2>9. Unordered Lists</h2>
+        <p>Use <code># Item</code> to create unordered lists. Precede each item with <code>#</code>.</p>
+        
+
+        <h2>10. Ordered Lists</h2>
+        <p>Use <code>1. Item</code> to create ordered lists. Prefix each item with a number and a period.</p>
+        
+
+        <h2>Conclusion</h2>
+        <p>This Markdown-like editor provides a simple and efficient way to create formatted content with Markdown and view it in real time. Use each feature to enrich your documents and make your content more engaging and organized.</p>
+
+        <p>This is still in development and there are still many more things to be added.</p>
+
+        <p>Feel free to give feedback on this and suggest any features you would like to see added.</p>
+     
+        <a href="https://gitlab.com/lx2l">
+            <img src="lx2.svg" alt="Clickable Image" class="clickable-image">
+        </a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
